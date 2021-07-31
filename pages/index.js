@@ -1,7 +1,6 @@
 import axios from 'axios';
 import Head from 'next/head'
 import { useEffect, useState } from 'react';
-import styles from '../styles/Home.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faTimes, faAdjust } from '@fortawesome/free-solid-svg-icons'
 
@@ -21,7 +20,6 @@ export default function Home() {
     axios.get(`http://apilayer.net/api/validate?access_key=e52d69f119348057d68ec090d2d10978&number=${number}`).then(response => {
       const data = response.data;
       setRes(data);
-      // console.log(res);
     })
   }, [number])
 
