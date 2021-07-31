@@ -6,7 +6,7 @@ import { faCheck, faTimes, faAdjust } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
 
-  const [number, setNumber] = useState("918225808241")
+  const [number, setNumber] = useState("")
   const [res, setRes] = useState({});
   const[dark, setDark] = useState(false);
 
@@ -22,6 +22,8 @@ export default function Home() {
       setRes(data);
     })
   }, [number])
+  
+  console.log(res);
 
   return (
     <div className={dark ? "dark" : ""}>
@@ -33,7 +35,6 @@ export default function Home() {
 
       <main className="h-screen dark:bg-gray-800 bg-gray-50 relative">
         <div className="h-16 dark:bg-gray-800 bg-gray-50 shadow-md dark:shadow-dark flex justify-center items-center mb-5">
-          {/* <div></div> */}
           <span className="text-gradient font-bold text-xl">NumVerify</span>
           <button className={`absolute right-10 p-3 shadow-md rounded-full ${dark ? "bg-white" : "bg-gray-900"}`} onClick={() => {setDark(!dark)}}>
             <FontAwesomeIcon className={`w-4 ${dark ? "text-gray-800" : "text-white"}`} icon={faAdjust} />
