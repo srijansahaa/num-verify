@@ -17,7 +17,8 @@ export default function Home() {
   }
 
   useEffect(() => {
-    axios.get(`http://apilayer.net/api/validate?access_key=e52d69f119348057d68ec090d2d10978&number=${number}`).then(response => {
+    axios.get(`http://apilayer.net/api/validate?access_key=36ca792893edd48133f3311a8ab172dc&number=${number}`)
+    .then(response => {
       const data = response.data;
       setRes(data);
     })
