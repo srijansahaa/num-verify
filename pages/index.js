@@ -23,8 +23,6 @@ export default function Home() {
       setRes(data);
     })
   }, [number])
-  
-  console.log(res);
 
   return (
     <div className={dark ? "dark" : ""}>
