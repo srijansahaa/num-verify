@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "react-scripts --openssl-legacy-provider build",
+    "start": "react-scripts --openssl-legacy-provider start",
     "lint": "next lint"
+  },
+  "engines": {
+    "node": "16.x"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
