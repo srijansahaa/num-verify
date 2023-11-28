@@ -8,7 +8,7 @@ export default function Home() {
 
   const [number, setNumber] = useState("")
   const [res, setRes] = useState({});
-  const[dark, setDark] = useState(false);
+  const [dark, setDark] = useState(false);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -18,10 +18,10 @@ export default function Home() {
 
   useEffect(() => {
     axios.get(`http://apilayer.net/api/validate?access_key=36ca792893edd48133f3311a8ab172dc&number=${number}`)
-    .then(response => {
-      const data = response.data;
-      setRes(data);
-    })
+      .then(response => {
+        const data = response.data;
+        setRes(data);
+      })
   }, [number])
 
   return (
@@ -35,7 +35,7 @@ export default function Home() {
       <main className="h-screen dark:bg-gray-800 bg-gray-50 relative">
         <div className="h-16 dark:bg-gray-800 bg-gray-50 shadow-md dark:shadow-dark flex justify-center items-center mb-5">
           <span className="text-gradient font-bold text-xl">NumVerify</span>
-          <button className={`absolute right-10 p-3 shadow-md rounded-full ${dark ? "bg-white" : "bg-gray-900"}`} onClick={() => {setDark(!dark)}}>
+          <button className={`absolute right-10 p-3 shadow-md rounded-full ${dark ? "bg-white" : "bg-gray-900"}`} onClick={() => { setDark(!dark) }}>
             <FontAwesomeIcon className={`w-4 ${dark ? "text-gray-800" : "text-white"}`} icon={faAdjust} />
           </button>
         </div>
@@ -43,7 +43,7 @@ export default function Home() {
         <div className="container">
           <div className="flex justify-center">
             <form className="flex justify-between w-full lg:w-4/5 xl:w-2/3" onSubmit={handleSearch}>
-              <input className="bg-white dark:bg-gray-900 dark:text-white dark:border-gray-900 border-white border-2 hover:border-red-500 rounded-lg h-10 w-full mr-2 shadow-md hover:shadow-lg pl-5" placeholder="Enter mobile number with country code"/>
+              <input className="bg-white dark:bg-gray-900 dark:text-white dark:border-gray-900 border-white border-2 hover:border-red-500 rounded-lg h-10 w-full mr-2 shadow-md hover:shadow-lg pl-5" placeholder="Enter mobile number with country code" />
               <button type="submit" className="btn bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 rounded-lg h-10 px-10 text-white dark:text-black font-semibold shadow-md hover:shadow-lg">Search</button>
             </form>
           </div>
@@ -86,9 +86,9 @@ export default function Home() {
                 <div className="w-1/2 dark:text-white">
                   {
                     res.valid ?
-                    <FontAwesomeIcon className="w-4 text-green-500" icon={faCheck} />
-                    :
-                    <FontAwesomeIcon className="w-4 text-red-500" icon={faTimes} />
+                      <FontAwesomeIcon className="w-4 text-green-500" icon={faCheck} />
+                      :
+                      <FontAwesomeIcon className="w-4 text-red-500" icon={faTimes} />
                   }
                 </div>
               </div>
